@@ -4,14 +4,14 @@ import com.solvd.laba.jjaccomando.exceptions.DuplicateBookingException;
 import com.solvd.laba.jjaccomando.exceptions.EmptySeatException;
 import com.solvd.laba.jjaccomando.enums.*;
 import com.solvd.laba.jjaccomando.exceptions.EmptyPassengerException;
-import com.solvd.laba.jjaccomando.interfaces.FlightInterface;
+import com.solvd.laba.jjaccomando.interfaces.Flights;
 import com.solvd.laba.jjaccomando.interfaces.UniqueIdInterface;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.HashMap;
 
 
-public final class Flight implements UniqueIdInterface, FlightInterface {
+public final class Flight implements UniqueIdInterface, Flights {
 
     public static LinkedList<Flight> flightList = new LinkedList<>();
     public Map<Seat, Passenger> mapSeatKey = new HashMap<>();
@@ -51,7 +51,7 @@ public final class Flight implements UniqueIdInterface, FlightInterface {
 
 
 
-    ////////////// FlightInterface Overrides /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////// Flights Overrides /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     //returns true if Flight Object has any availability regardless of SeatType
     @Override

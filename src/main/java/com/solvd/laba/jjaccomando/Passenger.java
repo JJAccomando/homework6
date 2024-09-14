@@ -1,10 +1,10 @@
 package com.solvd.laba.jjaccomando;
 
 import com.solvd.laba.jjaccomando.exceptions.*;
-import com.solvd.laba.jjaccomando.interfaces.PassengerInterface;
+import com.solvd.laba.jjaccomando.interfaces.Passengers;
 import com.solvd.laba.jjaccomando.interfaces.UniqueIdInterface;
 
-public class Passenger implements UniqueIdInterface, PassengerInterface {
+public class Passenger implements UniqueIdInterface, Passengers {
 
     private final int ID;
     private static int numPassengers = 0;
@@ -27,7 +27,7 @@ public class Passenger implements UniqueIdInterface, PassengerInterface {
 
 
 
-    ////////////// PassengerInterface Overrides //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////// Passengers Overrides //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     //returns Passenger Object's first name
     @Override

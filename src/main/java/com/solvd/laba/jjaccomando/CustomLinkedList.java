@@ -1,8 +1,8 @@
 package com.solvd.laba.jjaccomando;
 
-import com.solvd.laba.jjaccomando.interfaces.LuggageInterface;
+import com.solvd.laba.jjaccomando.interfaces.Luggage;
 
-public class CustomLinkedList<T extends LuggageInterface> {
+public class CustomLinkedList<T extends Luggage> {
 
     //Node class to represent each element in the linked list
     private static class Node<T> {

@@ -1,10 +1,10 @@
 package com.solvd.laba.jjaccomando;
 
 import com.solvd.laba.jjaccomando.exceptions.EmptyPassengerException;
-import com.solvd.laba.jjaccomando.interfaces.SeatInterface;
+import com.solvd.laba.jjaccomando.interfaces.Seats;
 import com.solvd.laba.jjaccomando.interfaces.UniqueIdInterface;
 
-public final class Seat implements UniqueIdInterface, SeatInterface {
+public final class Seat implements UniqueIdInterface, Seats {
 
     private final int SEAT_NUM;
     private final char SEAT_LETTER;
@@ -27,7 +27,7 @@ public final class Seat implements UniqueIdInterface, SeatInterface {
 
 
 
-    ////////////// SeatInterface Overrides /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////// Seats Overrides /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     //returns Passenger Object assigned to this Seat Object
     //throws exception if no Passenger was assigned

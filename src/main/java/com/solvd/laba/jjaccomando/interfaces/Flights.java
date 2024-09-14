@@ -5,7 +5,7 @@ import com.solvd.laba.jjaccomando.exceptions.DuplicateBookingException;
 import com.solvd.laba.jjaccomando.exceptions.EmptyPassengerException;
 import com.solvd.laba.jjaccomando.enums.SeatType;
 
-public interface FlightInterface {
+public interface Flights {
 
     boolean getSeatsAvailable();
     boolean getSeatsAvailable(SeatType seatType);

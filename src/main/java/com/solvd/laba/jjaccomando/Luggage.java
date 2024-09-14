@@ -1,9 +1,8 @@
 package com.solvd.laba.jjaccomando;
 
-import com.solvd.laba.jjaccomando.interfaces.LuggageInterface;
 import com.solvd.laba.jjaccomando.interfaces.UniqueIdInterface;
 
-public final class Luggage implements UniqueIdInterface, LuggageInterface {
+public final class Luggage implements UniqueIdInterface, com.solvd.laba.jjaccomando.interfaces.Luggage {
 
     private final int ID;
     private int weight;
@@ -24,7 +23,7 @@ public final class Luggage implements UniqueIdInterface, LuggageInterface {
 
 
 
-    ////////////// LuggageInterface Overrides ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////// Luggage Overrides ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     //resets Luggage Object's weight to new weight value
     @Override

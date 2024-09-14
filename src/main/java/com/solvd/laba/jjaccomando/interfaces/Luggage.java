@@ -1,6 +1,6 @@
 package com.solvd.laba.jjaccomando.interfaces;
 
-public interface LuggageInterface {
+public interface Luggage {
 
     void setWeight(int weight);
     int getWeight();

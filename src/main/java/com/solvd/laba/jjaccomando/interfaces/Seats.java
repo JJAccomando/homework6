@@ -3,7 +3,7 @@ package com.solvd.laba.jjaccomando.interfaces;
 import com.solvd.laba.jjaccomando.Passenger;
 import com.solvd.laba.jjaccomando.exceptions.EmptyPassengerException;
 
-public interface SeatInterface {
+public interface Seats {
 
     Passenger getPassenger() throws EmptyPassengerException;
     boolean addPassenger(Passenger person);

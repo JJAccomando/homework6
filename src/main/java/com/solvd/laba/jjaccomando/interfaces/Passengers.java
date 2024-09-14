@@ -5,7 +5,7 @@ import com.solvd.laba.jjaccomando.Luggage;
 import com.solvd.laba.jjaccomando.Seat;
 import com.solvd.laba.jjaccomando.exceptions.*;
 
-public interface PassengerInterface {
+public interface Passengers {
 
     int MAX_LUGGAGE = 10;
 
