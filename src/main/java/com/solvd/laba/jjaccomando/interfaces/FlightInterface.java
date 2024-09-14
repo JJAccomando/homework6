@@ -1,9 +1,9 @@
-package com.solvd.laba.jjaccomando.myinterfaces;
+package com.solvd.laba.jjaccomando.interfaces;
 
 import com.solvd.laba.jjaccomando.Passenger;
-import com.solvd.laba.jjaccomando.customexceptions.DuplicateBookingException;
-import com.solvd.laba.jjaccomando.customexceptions.EmptyPassengerException;
-import com.solvd.laba.jjaccomando.myenums.SeatType;
+import com.solvd.laba.jjaccomando.exceptions.DuplicateBookingException;
+import com.solvd.laba.jjaccomando.exceptions.EmptyPassengerException;
+import com.solvd.laba.jjaccomando.enums.SeatType;
 
 public interface FlightInterface {
 

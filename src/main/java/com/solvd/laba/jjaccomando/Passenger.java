@@ -1,8 +1,8 @@
 package com.solvd.laba.jjaccomando;
 
-import com.solvd.laba.jjaccomando.customexceptions.*;
-import com.solvd.laba.jjaccomando.myinterfaces.PassengerInterface;
-import com.solvd.laba.jjaccomando.myinterfaces.UniqueIdInterface;
+import com.solvd.laba.jjaccomando.exceptions.*;
+import com.solvd.laba.jjaccomando.interfaces.PassengerInterface;
+import com.solvd.laba.jjaccomando.interfaces.UniqueIdInterface;
 
 public class Passenger implements UniqueIdInterface, PassengerInterface {
 

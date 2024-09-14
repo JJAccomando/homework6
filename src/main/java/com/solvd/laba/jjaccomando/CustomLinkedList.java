@@ -1,6 +1,6 @@
 package com.solvd.laba.jjaccomando;
 
-import com.solvd.laba.jjaccomando.myinterfaces.LuggageInterface;
+import com.solvd.laba.jjaccomando.interfaces.LuggageInterface;
 
 public class CustomLinkedList<T extends LuggageInterface> {
 

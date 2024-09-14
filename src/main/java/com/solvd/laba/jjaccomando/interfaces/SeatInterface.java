@@ -1,7 +1,7 @@
-package com.solvd.laba.jjaccomando.myinterfaces;
+package com.solvd.laba.jjaccomando.interfaces;
 
 import com.solvd.laba.jjaccomando.Passenger;
-import com.solvd.laba.jjaccomando.customexceptions.EmptyPassengerException;
+import com.solvd.laba.jjaccomando.exceptions.EmptyPassengerException;
 
 public interface SeatInterface {
 

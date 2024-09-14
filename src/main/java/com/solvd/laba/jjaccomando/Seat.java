@@ -1,8 +1,8 @@
 package com.solvd.laba.jjaccomando;
 
-import com.solvd.laba.jjaccomando.customexceptions.EmptyPassengerException;
-import com.solvd.laba.jjaccomando.myinterfaces.SeatInterface;
-import com.solvd.laba.jjaccomando.myinterfaces.UniqueIdInterface;
+import com.solvd.laba.jjaccomando.exceptions.EmptyPassengerException;
+import com.solvd.laba.jjaccomando.interfaces.SeatInterface;
+import com.solvd.laba.jjaccomando.interfaces.UniqueIdInterface;
 
 public final class Seat implements UniqueIdInterface, SeatInterface {
 

@@ -1,4 +1,4 @@
-package com.solvd.laba.jjaccomando.myenums;
+package com.solvd.laba.jjaccomando.enums;
 
 public enum PlaneType {
     A380(16, 4, 90, 

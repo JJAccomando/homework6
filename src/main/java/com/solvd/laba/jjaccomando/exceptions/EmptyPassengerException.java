@@ -1,4 +1,4 @@
-package com.solvd.laba.jjaccomando.customexceptions;
+package com.solvd.laba.jjaccomando.exceptions;
 
 public class EmptyPassengerException extends Exception {
 

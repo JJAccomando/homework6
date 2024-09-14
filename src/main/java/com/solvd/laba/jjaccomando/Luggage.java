@@ -1,7 +1,7 @@
 package com.solvd.laba.jjaccomando;
 
-import com.solvd.laba.jjaccomando.myinterfaces.LuggageInterface;
-import com.solvd.laba.jjaccomando.myinterfaces.UniqueIdInterface;
+import com.solvd.laba.jjaccomando.interfaces.LuggageInterface;
+import com.solvd.laba.jjaccomando.interfaces.UniqueIdInterface;
 
 public final class Luggage implements UniqueIdInterface, LuggageInterface {
 

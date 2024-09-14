@@ -1,4 +1,4 @@
-package com.solvd.laba.jjaccomando.myenums;
+package com.solvd.laba.jjaccomando.enums;
 
 public enum SeatType {
     

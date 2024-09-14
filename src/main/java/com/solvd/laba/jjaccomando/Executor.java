@@ -1,8 +1,8 @@
 package com.solvd.laba.jjaccomando;
 
 import java.util.Scanner;
-import com.solvd.laba.jjaccomando.myenums.*;
-import com.solvd.laba.jjaccomando.customexceptions.*;
+import com.solvd.laba.jjaccomando.enums.*;
+import com.solvd.laba.jjaccomando.exceptions.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

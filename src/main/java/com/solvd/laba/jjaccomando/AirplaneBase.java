@@ -1,7 +1,7 @@
 package com.solvd.laba.jjaccomando;
 
-import com.solvd.laba.jjaccomando.myinterfaces.UniqueIdInterface;
-import com.solvd.laba.jjaccomando.myenums.*;
+import com.solvd.laba.jjaccomando.interfaces.UniqueIdInterface;
+import com.solvd.laba.jjaccomando.enums.*;
 import java.util.Map;
 import java.util.HashMap;
 

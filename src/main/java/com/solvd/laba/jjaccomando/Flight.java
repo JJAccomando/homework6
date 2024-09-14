@@ -1,11 +1,11 @@
 package com.solvd.laba.jjaccomando;
 
-import com.solvd.laba.jjaccomando.customexceptions.DuplicateBookingException;
-import com.solvd.laba.jjaccomando.customexceptions.EmptySeatException;
-import com.solvd.laba.jjaccomando.myenums.*;
-import com.solvd.laba.jjaccomando.customexceptions.EmptyPassengerException;
-import com.solvd.laba.jjaccomando.myinterfaces.FlightInterface;
-import com.solvd.laba.jjaccomando.myinterfaces.UniqueIdInterface;
+import com.solvd.laba.jjaccomando.exceptions.DuplicateBookingException;
+import com.solvd.laba.jjaccomando.exceptions.EmptySeatException;
+import com.solvd.laba.jjaccomando.enums.*;
+import com.solvd.laba.jjaccomando.exceptions.EmptyPassengerException;
+import com.solvd.laba.jjaccomando.interfaces.FlightInterface;
+import com.solvd.laba.jjaccomando.interfaces.UniqueIdInterface;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.HashMap;

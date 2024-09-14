@@ -1,7 +1,7 @@
 package com.solvd.laba.jjaccomando;
 
-import com.solvd.laba.jjaccomando.customexceptions.DuplicateBookingException;
-import com.solvd.laba.jjaccomando.myenums.*;
+import com.solvd.laba.jjaccomando.exceptions.DuplicateBookingException;
+import com.solvd.laba.jjaccomando.enums.*;
 
 public final class AirbusA380 extends AirplaneBase {
 
