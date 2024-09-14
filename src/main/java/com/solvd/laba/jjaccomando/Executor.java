@@ -68,37 +68,37 @@ public class Executor {
         System.out.println(person3.getNumBags()); //Displays 10 because Passenger has maximum number of Luggage
         try {
             System.out.println(person3.getLuggage().toString());
-        } catch (NullBagException nbe) {
+        } catch (EmptyBagException nbe) {
             System.out.println(nbe.getMessage());
-            logger.error("Failed to retrieve passenger luggage information. Error: {NullBagException}");
+            logger.error("Failed to retrieve passenger luggage information. Error: {EmptyBagException}");
         }
 
         try {
-            Passenger[] passengers = flight.getPassengers(); //Try to return Passenger array and throws NullPassengerException because no Passengers were added to Flight yet
+            Passenger[] passengers = flight.getPassengers(); //Try to return Passenger array and throws EmptyPassengerException because no Passengers were added to Flight yet
             for (Passenger passenger : passengers) { 
                 System.out.println(passenger); //Try to print each Passenger but will not execute because exception was thrown
             }
-        } catch (NullPassengerException npe) {
+        } catch (EmptyPassengerException npe) {
             System.out.println(npe.getMessage()); 
-            logger.error("Failed to retrieve passengers information. Error: {NullPassengerException}");
+            logger.error("Failed to retrieve passengers information. Error: {EmptyPassengerException}");
         }
 
         try {
             flight.bookSeat(person1, seat); //Books Passenger on Flight
-            flight.bookSeat(person1, seat); //Try to book same Passenger on same Flight and throws DoubleBookException
-        } catch (DoubleBookException dbe) {
+            flight.bookSeat(person1, seat); //Try to book same Passenger on same Flight and throws DuplicateBookingException
+        } catch (DuplicateBookingException dbe) {
             System.out.println(dbe.getMessage()); 
-            logger.error("Failed to add passenger to flight. Error: {DoubleBookException}");
+            logger.error("Failed to add passenger to flight. Error: {DuplicateBookingException}");
         }
 
         System.out.println(flight.getNumPassengers()); //Prints out 1 because only one Passenger was added since second Passenger was a duplicate
 
         try {
             System.out.println(person1.getSeat()); //Prints person1's seat number
-            System.out.println(person2.getSeat()); //Try to print person2's seat number and throws NullSeatException because person2 was never assigned a Seat
-        } catch (NullSeatException nse) {
+            System.out.println(person2.getSeat()); //Try to print person2's seat number and throws EmptySeatException because person2 was never assigned a Seat
+        } catch (EmptySeatException nse) {
             System.out.println(nse.getMessage()); 
-            logger.error("Failed to retrieve seat information. Error: {NullSeatException}");
+            logger.error("Failed to retrieve seat information. Error: {EmptySeatException}");
         }
 
         logger.info("Program success. Shutting down...");

@@ -13,8 +13,8 @@ public interface PassengerInterface {
     String getLastName();
     boolean addBags(Luggage bag) throws OversizeBagException, OverLimitException;
     int getNumBags();
-    void setSeatNum(Seat seat) throws DoubleBookException;
-    Seat getSeat() throws NullSeatException;
-    CustomLinkedList<Luggage> getLuggage() throws NullBagException;
+    void setSeatNum(Seat seat) throws DuplicateBookingException;
+    Seat getSeat() throws EmptySeatException;
+    CustomLinkedList<Luggage> getLuggage() throws EmptyBagException;
     
 }

@@ -1,9 +1,9 @@
 package com.solvd.laba.jjaccomando;
 
+import com.solvd.laba.jjaccomando.customexceptions.DuplicateBookingException;
+import com.solvd.laba.jjaccomando.customexceptions.EmptySeatException;
 import com.solvd.laba.jjaccomando.myenums.*;
-import com.solvd.laba.jjaccomando.customexceptions.DoubleBookException;
-import com.solvd.laba.jjaccomando.customexceptions.NullPassengerException;
-import com.solvd.laba.jjaccomando.customexceptions.NullSeatException;
+import com.solvd.laba.jjaccomando.customexceptions.EmptyPassengerException;
 import com.solvd.laba.jjaccomando.myinterfaces.FlightInterface;
 import com.solvd.laba.jjaccomando.myinterfaces.UniqueIdInterface;
 import java.util.LinkedList;
@@ -77,10 +77,10 @@ public final class Flight implements UniqueIdInterface, FlightInterface {
 
     //adds a Passenger to the Flight Object Passenger array and assigns Passenger a Seat based on SeatType
     @Override
-    public final boolean bookSeat(Passenger person, SeatType seatType) throws DoubleBookException {
+    public final boolean bookSeat(Passenger person, SeatType seatType) throws DuplicateBookingException {
         for (int i = 0; i < passengers.length; i++) {
             if (person.equals(passengers[i]))
-                throw new DoubleBookException("Passenger has already booked a seat!");
+                throw new DuplicateBookingException("Passenger has already booked a seat!");
         }
         if (getSeatsAvailable(seatType)) {
             switch (seatType) {
@@ -104,10 +104,10 @@ public final class Flight implements UniqueIdInterface, FlightInterface {
             }
             try {
                 mapPassengerKey.put(person, person.getSeat());
-            } catch (NullSeatException e) {}
+            } catch (EmptySeatException e) {}
             try {
                 mapSeatKey.put(person.getSeat(), person);
-            } catch (NullSeatException e) {}
+            } catch (EmptySeatException e) {}
             seatsAvailable--;
             addPassenger(person);
             return true;
@@ -123,9 +123,9 @@ public final class Flight implements UniqueIdInterface, FlightInterface {
 
     //returns Passenger array from Flight Object if array is not empty
     @Override
-    public final Passenger[] getPassengers() throws NullPassengerException {
+    public final Passenger[] getPassengers() throws EmptyPassengerException {
         if (numPassengers == 0)
-            throw new NullPassengerException("Flight does not contain any passengers!");
+            throw new EmptyPassengerException("Flight does not contain any passengers!");
         return passengers;
     }
 

@@ -5,7 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43075b7a-5188-41a5-b498-a10ae76c78af" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/laba/jjaccomando/AirbusA320.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/laba/jjaccomando/AirbusA320.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/laba/jjaccomando/AirbusA380.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/laba/jjaccomando/AirbusA380.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/laba/jjaccomando/Boeing737.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/laba/jjaccomando/Boeing737.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/laba/jjaccomando/Executor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/laba/jjaccomando/Executor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/laba/jjaccomando/Flight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/laba/jjaccomando/Flight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/laba/jjaccomando/Passenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/laba/jjaccomando/Passenger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/laba/jjaccomando/Seat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/laba/jjaccomando/Seat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/laba/jjaccomando/customexceptions/DoubleBookException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/laba/jjaccomando/customexceptions/DuplicateBookingException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/laba/jjaccomando/customexceptions/NullBagException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/laba/jjaccomando/customexceptions/EmptyBagException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/laba/jjaccomando/customexceptions/NullPassengerException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/laba/jjaccomando/customexceptions/EmptyPassengerException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/laba/jjaccomando/customexceptions/NullSeatException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/laba/jjaccomando/customexceptions/EmptySeatException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/laba/jjaccomando/myinterfaces/FlightInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/laba/jjaccomando/myinterfaces/FlightInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/laba/jjaccomando/myinterfaces/PassengerInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/laba/jjaccomando/myinterfaces/PassengerInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/laba/jjaccomando/myinterfaces/SeatInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/laba/jjaccomando/myinterfaces/SeatInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
