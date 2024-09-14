@@ -7,16 +7,16 @@ public final class AirbusA320 extends AirplaneBase {
 
     private final int ID;
     private static int numA320 = 0;
-    private final Seat[] FIRST_CLASS_SEATS, BUSINESS_CLASS_SEATS, ECONOMY_CLASS_SEATS;
+    private final Seat[] firstClassSeats, businessClassSeats, economyClassSeats;
     private static final PlaneType PLANE_TYPE = PlaneType.A320;
 
     //AirbusA320 Object constructor
     public AirbusA320() {
         ++numA320;
         this.ID = super.getTotalPlanes();
-        this.FIRST_CLASS_SEATS = new Seat[PLANE_TYPE.SEATS_IN_FIRST];
-        this.BUSINESS_CLASS_SEATS = new Seat[PLANE_TYPE.SEATS_IN_BUSINESS];
-        this.ECONOMY_CLASS_SEATS = new Seat[PLANE_TYPE.SEATS_IN_ECON];
+        this.firstClassSeats = new Seat[PLANE_TYPE.SEATS_IN_FIRST];
+        this.businessClassSeats = new Seat[PLANE_TYPE.SEATS_IN_BUSINESS];
+        this.economyClassSeats = new Seat[PLANE_TYPE.SEATS_IN_ECON];
         this.populateSeats();
         super.addToMap(this);
     }
@@ -38,9 +38,9 @@ public final class AirbusA320 extends AirplaneBase {
             char seatLetter = 'A';
             for (int i = 0; i < PLANE_TYPE.NUM_COLUMNS_FIRST; i++) {
                 Seat seat = new Seat(row, seatLetter);
-                for (int j = 0; j < FIRST_CLASS_SEATS.length; j++) {
-                    if (FIRST_CLASS_SEATS[j] == null) {
-                        FIRST_CLASS_SEATS[j] = seat;
+                for (int j = 0; j < firstClassSeats.length; j++) {
+                    if (firstClassSeats[j] == null) {
+                        firstClassSeats[j] = seat;
                         break;
                     }
                 }
@@ -52,9 +52,9 @@ public final class AirbusA320 extends AirplaneBase {
             char seatLetter = 'A';
             for (int i = 0; i < PLANE_TYPE.NUM_COLUMNS_BUSINESS; i++) {
                 Seat seat = new Seat(row, seatLetter);
-                for (int j = 0; j < BUSINESS_CLASS_SEATS.length; j++) {
-                    if (BUSINESS_CLASS_SEATS[j] == null) {
-                        BUSINESS_CLASS_SEATS[j] = seat;
+                for (int j = 0; j < businessClassSeats.length; j++) {
+                    if (businessClassSeats[j] == null) {
+                        businessClassSeats[j] = seat;
                         break;
                     }
                 }
@@ -66,9 +66,9 @@ public final class AirbusA320 extends AirplaneBase {
             char seatLetter = 'A';
             for (int i = 0; i < PLANE_TYPE.NUM_COLUMNS_ECON; i++) {
                 Seat seat = new Seat(row, seatLetter);
-                for (int j = 0; j < ECONOMY_CLASS_SEATS.length; j++) {
-                    if (ECONOMY_CLASS_SEATS[j] == null) {
-                        ECONOMY_CLASS_SEATS[j] = seat;
+                for (int j = 0; j < economyClassSeats.length; j++) {
+                    if (economyClassSeats[j] == null) {
+                        economyClassSeats[j] = seat;
                         break;
                     }
                 }
@@ -94,27 +94,27 @@ public final class AirbusA320 extends AirplaneBase {
     public final boolean assignSeat(Passenger person, int index, SeatType seat) {
         switch (seat) {
             case FIRST_CLASS:
-                FIRST_CLASS_SEATS[index].addPassenger(person);
+                firstClassSeats[index].addPassenger(person);
                 try {
-                    person.setSeatNum(FIRST_CLASS_SEATS[index]);
+                    person.setSeatNum(firstClassSeats[index]);
                 } catch (DuplicateBookingException e) {
                     return false;
                 }
                 break;
 
             case BUSINESS_CLASS:
-                BUSINESS_CLASS_SEATS[index].addPassenger(person);
+                businessClassSeats[index].addPassenger(person);
                 try {
-                    person.setSeatNum(BUSINESS_CLASS_SEATS[index]);
+                    person.setSeatNum(businessClassSeats[index]);
                 } catch (DuplicateBookingException e) {
                     return false;
                 }
                 break;
 
             case ECONOMY_CLASS:
-                ECONOMY_CLASS_SEATS[index].addPassenger(person);
+                economyClassSeats[index].addPassenger(person);
                 try {
-                    person.setSeatNum(ECONOMY_CLASS_SEATS[index]);
+                    person.setSeatNum(economyClassSeats[index]);
                 } catch (DuplicateBookingException e) {
                     return false;
                 }
