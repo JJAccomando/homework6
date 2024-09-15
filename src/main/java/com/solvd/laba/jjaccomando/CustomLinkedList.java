@@ -2,7 +2,7 @@ package com.solvd.laba.jjaccomando;
 
 import com.solvd.laba.jjaccomando.interfaces.Luggage;
 
-public class CustomLinkedList<T extends Luggage> {
+public final class CustomLinkedList<T extends Luggage> {
 
     //Node class to represent each element in the linked list
     private static class Node<T> {
@@ -66,15 +66,15 @@ public class CustomLinkedList<T extends Luggage> {
 
     @Override
     public String toString() {
-        String S = "{";
+        StringBuilder S = new StringBuilder("{");
         Node<T> myNode = head;
         if (myNode == null)
             return S + "}";
         while (myNode.next != null) {
-            S += String.valueOf(myNode.data) + "->";
+            S.append(String.valueOf(myNode.data)).append("->");
             myNode = myNode.next;
         }
-        S += String.valueOf(myNode.data);
+        S.append(String.valueOf(myNode.data));
         return S + "}";
     }
 

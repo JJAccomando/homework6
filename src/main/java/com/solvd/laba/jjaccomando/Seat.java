@@ -80,10 +80,7 @@ public final class Seat implements UniqueIdInterface, Seats {
     //returns a String of a Seat Object as that Object's Seat "SEAT_NUM", and "SEAT_LETTER"
     @Override
     public final String toString() {
-        StringBuilder tempString = new StringBuilder();
-        tempString.append(SEAT_NUM);
-        tempString.append(SEAT_LETTER);
-        return "Seat#: " + tempString.toString();
+        return "Seat#: " + String.valueOf(SEAT_NUM) + SEAT_LETTER;
     }
 
     //compares 2 Seat Objects by comparing their Object's hashcode
