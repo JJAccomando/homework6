@@ -5,14 +5,14 @@ import com.solvd.laba.jjaccomando.interfaces.UniqueIdInterface;
 
 public final class PassengerLuggage implements UniqueIdInterface, Luggage {
 
-    private final int ID;
+    private final int id;
     private int weight;
     private static int numLuggage = 0;
     private boolean isOverweight = false;
 
     //PassengerLuggage Object constructor
     public PassengerLuggage(int weight) {
-        this.ID = ++numLuggage;
+        this.id = ++numLuggage;
         this.weight = weight;
         this.isOverweight = weight > 50;
     }
@@ -48,20 +48,20 @@ public final class PassengerLuggage implements UniqueIdInterface, Luggage {
 
     ////////////// UniqueIdInterface Overrides ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    //returns PassengerLuggage Object's ID#
+    //returns PassengerLuggage Object's id#
     @Override
     public final int getId() {
-        return ID;
+        return id;
     }
 
 
 
     ////////////// Object Class Overrides ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    //returns a String of a PassengerLuggage Object as the Object's ID# and "weight"
+    //returns a String of a PassengerLuggage Object as the Object's id# and "weight"
     @Override
     public final String toString() {
-        return String.format("PassengerLuggage ID#: %1$d\nPassengerLuggage weight: %2$d", ID, weight);
+        return String.format("PassengerLuggage ID#: %1$d\nPassengerLuggage weight: %2$d", id, weight);
     }
 
     //compares 2 PassengerLuggage Objects by comparing their Object's hashcode

@@ -5,7 +5,7 @@ import com.solvd.laba.jjaccomando.enums.*;
 
 public final class AirbusA380 extends AirplaneBase {
 
-    private final int ID;
+    private final int id;
     private static int numA380 = 0;
     private final Seat[] firstClassSeats, businessClassSeats, economyClassSeats;
     private static final PlaneType PLANE_TYPE = PlaneType.A380;
@@ -13,7 +13,7 @@ public final class AirbusA380 extends AirplaneBase {
     //AirbusA380 Object constructor
     public AirbusA380() {
         ++numA380;
-        this.ID = getTotalPlanes();
+        this.id = getTotalPlanes();
         this.firstClassSeats = new Seat[PLANE_TYPE.SEATS_IN_FIRST];
         this.businessClassSeats = new Seat[PLANE_TYPE.SEATS_IN_BUSINESS];
         this.economyClassSeats = new Seat[PLANE_TYPE.SEATS_IN_ECON];
@@ -114,10 +114,10 @@ public final class AirbusA380 extends AirplaneBase {
 
     ////////////// UniqueIdInterface Overrides ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    //returns AirbusA380 Object's ID#
+    //returns AirbusA380 Object's id#
     @Override
     public final int getId() {
-        return ID;
+        return id;
     }
  
 
@@ -127,7 +127,7 @@ public final class AirbusA380 extends AirplaneBase {
     //returns a String of an AirbusA380 Object as the Object's "COMPANY", "CLASSIFICATION", and ID#
     @Override
     public final String toString() {
-        return String.format("%1$s %2$s\nPlane ID#: %3$d", PLANE_TYPE.COMPANY, PLANE_TYPE.CLASSIFICATION, ID);
+        return String.format("%1$s %2$s\nPlane ID#: %3$d", PLANE_TYPE.COMPANY, PLANE_TYPE.CLASSIFICATION, id);
     }
 
     //compares 2 AirbusA380 Objects by comparing their Object's hashcode

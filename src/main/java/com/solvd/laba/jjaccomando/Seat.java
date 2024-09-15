@@ -8,16 +8,16 @@ public final class Seat implements UniqueIdInterface, Seats {
 
     private final int SEAT_NUM;
     private final char SEAT_LETTER;
-    private final int ID;
+    private final int id;
     private static int numTotalSeats = 0;
     private Passenger passenger;
-    private boolean availabe = true;
+    private boolean available = true;
 
     //Seat Object constructor
     public Seat(int seatNum, char seatLetter) {
         SEAT_NUM = seatNum;
         SEAT_LETTER = seatLetter;
-        ID = ++numTotalSeats;
+        id = ++numTotalSeats;
     }
 
     //returns total number of Seat Objects instantiated in program
@@ -33,7 +33,7 @@ public final class Seat implements UniqueIdInterface, Seats {
     //throws exception if no Passenger was assigned
     @Override
     public final Passenger getPassenger() throws EmptyPassengerException {
-        if (!availabe) 
+        if (!available)
             throw new EmptyPassengerException("Seat has no assigned passenger!");
         return passenger;
     }
@@ -41,14 +41,14 @@ public final class Seat implements UniqueIdInterface, Seats {
     //returns true if Seat Object does not have assigned Passenger
     @Override
     public final boolean isAvailable() {
-        return availabe;
+        return available;
     }
 
     //assigns Passenger to this Seat object and changes Seat availability to false 
     @Override
     public final boolean addPassenger(Passenger passenger) {
         this.passenger = passenger;
-        return availabe = false;
+        return available = false;
     }
 
     //returns Seat row number
@@ -67,10 +67,10 @@ public final class Seat implements UniqueIdInterface, Seats {
 
     ////////////// UniqueIdInterface Overrides ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    //returns Seat Object's ID#
+    //returns Seat Object's id#
     @Override
     public final int getId() {
-        return ID;
+        return id;
     }
 
 

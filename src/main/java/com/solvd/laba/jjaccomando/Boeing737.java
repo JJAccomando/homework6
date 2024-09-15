@@ -5,7 +5,7 @@ import com.solvd.laba.jjaccomando.enums.*;
 
 public final class Boeing737 extends AirplaneBase {
 
-    private final int ID;
+    private final int id;
     private static int numB737 = 0;
     private final Seat[] firstClassSeats, businessClassSeats, economyClassSeats;
     private static final PlaneType PLANE_TYPE = PlaneType.B737; 
@@ -13,7 +13,7 @@ public final class Boeing737 extends AirplaneBase {
     //Boeing737 Object constructor
     public Boeing737() {
         ++numB737;
-        this.ID = getTotalPlanes();
+        this.id = getTotalPlanes();
         this.firstClassSeats = new Seat[PLANE_TYPE.SEATS_IN_FIRST];
         this.businessClassSeats = new Seat[PLANE_TYPE.SEATS_IN_BUSINESS];
         this.economyClassSeats = new Seat[PLANE_TYPE.SEATS_IN_ECON];
@@ -117,7 +117,7 @@ public final class Boeing737 extends AirplaneBase {
     //returns Boeing737 Object's ID#
     @Override
     public final int getId() {
-        return ID;
+        return id;
     }
 
 
@@ -127,7 +127,7 @@ public final class Boeing737 extends AirplaneBase {
     //returns a String of an Boeing737 Object as the Object's "COMPANY", "CLASSIFICATION", and ID#
     @Override
     public final String toString() {
-        return String.format("%1$s %2$s\nPlane ID#: %3$d", PLANE_TYPE.COMPANY, PLANE_TYPE.CLASSIFICATION, ID);
+        return String.format("%1$s %2$s\nPlane ID#: %3$d", PLANE_TYPE.COMPANY, PLANE_TYPE.CLASSIFICATION, id);
     }
 
     //compares 2 Boeing737 Objects by comparing their Object's hashcode
