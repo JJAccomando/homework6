@@ -39,6 +39,7 @@ public final class AirbusA380 extends AirplaneBase {
                 PLANE_TYPE.NUM_COLUMNS_ECON, totalRowFirst + totalRowBus + 1);
     }
 
+    //helper method for populateSeats method
     private final void populateSeatsHelper (Seat[] seatArray, int numRows, int numColumns, int startRow) {
         for (int row = startRow; row <= numRows; row++) {
             char seatLetter = 'A';

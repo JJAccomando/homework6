@@ -49,6 +49,36 @@ public final class Flight implements UniqueIdInterface, Flights {
         passengers[numPassengers++] = person;
     }
 
+    //helper method for bookSeat method
+    private final boolean handleSeatAssignment(Passenger person, SeatType seatType) {
+        switch (seatType) {
+            case FIRST_CLASS:
+                if (firstClassSeatsCount < planeType.SEATS_IN_FIRST) {
+                    plane.assignSeat(person, firstClassSeatsCount++, seatType);
+                    return true;
+                }
+                break;
+
+            case BUSINESS_CLASS:
+                if (businessClassSeatsCount < planeType.SEATS_IN_BUSINESS) {
+                    plane.assignSeat(person, businessClassSeatsCount++, seatType);
+                    return true;
+                }
+                break;
+
+            case ECONOMY_CLASS:
+                if (economyClassSeatsCount < planeType.SEATS_IN_ECON) {
+                    plane.assignSeat(person, economyClassSeatsCount++, seatType);
+                    return true;
+                }
+                break;
+
+            default:
+                return false;
+        }
+        return false;
+    }
+
 
 
     ////////////// Flights Overrides /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -82,26 +112,7 @@ public final class Flight implements UniqueIdInterface, Flights {
             if (person.equals(passenger))
                 throw new DuplicateBookingException("Passenger has already booked a seat!");
         }
-        if (getSeatsAvailable(seatType)) {
-            switch (seatType) {
-                case FIRST_CLASS:
-                    plane.assignSeat(person, firstClassSeatsCount, seatType);
-                    firstClassSeatsCount++;
-                    break;
-
-                case BUSINESS_CLASS:
-                    plane.assignSeat(person, businessClassSeatsCount, seatType);
-                    businessClassSeatsCount++;
-                    break;
-
-                case ECONOMY_CLASS:
-                    plane.assignSeat(person, economyClassSeatsCount, seatType);
-                    economyClassSeatsCount++;
-                    break;
-                    
-                default:
-                    return false;
-            }
+        if (handleSeatAssignment(person, seatType)) {
             try {
                 person.getSeat();
                 mapPassengerKey.put(person, person.getSeat());
