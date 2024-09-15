@@ -38,7 +38,7 @@ public final class Flight implements UniqueIdInterface, Flights {
     }
 
     //returns current number of Flight Objects instantiated
-    public static final int getNumFlights() {
+    public static int getNumFlights() {
         return numFlights;
     }
 
@@ -137,8 +137,7 @@ public final class Flight implements UniqueIdInterface, Flights {
         String arrivingTo = "Arriving to: " + arriveTo;
         String passengers = "Number of passengers: " + numPassengers;
         String planeInfo = String.format("Plane: %1$s %2$s", planeType.COMPANY, planeType.CLASSIFICATION);
-        String myString = String.format("%1$s\n%2$s\n%3$s\n%4$s\n%5$s", flightNumber, departingFrom, arrivingTo, passengers, planeInfo);
-        return myString;
+        return String.format("%1$s\n%2$s\n%3$s\n%4$s\n%5$s", flightNumber, departingFrom, arrivingTo, passengers, planeInfo);
     }
 
 
@@ -161,14 +160,14 @@ public final class Flight implements UniqueIdInterface, Flights {
         return "Flight#: " + flightNum;
     }
 
-    //compares 2 Flight Object's by comparing their Object's hashcodes
+    //compares 2 Flight Object's by comparing their Object's hashcode
     @Override
     public final boolean equals(Object obj) {
         if (obj == this)
             return true;
         if (obj instanceof Flight) {
             Flight cast = (Flight)obj;
-            return this.hashCode() == cast.hashCode();
+            return this.getId() == cast.getId();
         }
         return false;
     }

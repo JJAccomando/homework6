@@ -137,7 +137,7 @@ public final class AirbusA380 extends AirplaneBase {
             return true;
         if (obj instanceof AirbusA380) {
             AirbusA380 cast = (AirbusA380)obj;
-            return this.hashCode() == cast.hashCode();
+            return this.getId() == cast.getId();
         }
         return false;
     }

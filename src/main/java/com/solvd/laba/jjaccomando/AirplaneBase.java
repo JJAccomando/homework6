@@ -13,7 +13,7 @@ public abstract class AirplaneBase implements UniqueIdInterface {
     public static Map<Integer, Boeing737> boeing737Map = new HashMap<>();
 
     {
-        //incraments total number of airplanes each time a new Object that extends AirplaneBase is created
+        //increments total number of airplanes each time a new Object that extends AirplaneBase is created
         ++numPlanes;
     }
 
@@ -21,7 +21,7 @@ public abstract class AirplaneBase implements UniqueIdInterface {
 
     abstract public boolean assignSeat(Passenger person, int index, SeatType seat);
 
-    public static final <T extends AirplaneBase> void addToMap(T obj) {
+    public static <T extends AirplaneBase> void addToMap(T obj) {
         if (obj instanceof AirbusA320) {
             airbusA320Map.put(obj.getId(), (AirbusA320)obj);
         }

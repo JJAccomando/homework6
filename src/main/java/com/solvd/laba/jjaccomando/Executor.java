@@ -32,17 +32,17 @@ public class Executor {
         logger.info("User input successful.");
 
         Passenger person3 = new Passenger(firstName, lastName);
-        Luggage overweightBag = new Luggage(55);
+        PassengerLuggage overweightBag = new PassengerLuggage(55);
         logger.warn("Over weight luggage created.");
-        Luggage[] bags = new Luggage[15];
+        PassengerLuggage[] bags = new PassengerLuggage[15];
         int weight = 45;
         for (int i = 0; i < bags.length; i++) {
-            Luggage bag = new Luggage(weight);
+            PassengerLuggage bag = new PassengerLuggage(weight);
             bags[i] = bag;
         }
 
         try {
-            person3.addBags(overweightBag); //Try to add overweight Luggage to Passenger and throws OversizeBagException
+            person3.addBags(overweightBag); //Try to add overweight PassengerLuggage to Passenger and throws OversizeBagException
         } catch (OversizeBagException obe) {
             System.out.println(obe.getMessage()); 
             logger.error("Failed to add passenger luggage. Error: {OversizeBagException}");
@@ -51,10 +51,10 @@ public class Executor {
             logger.error("Failed to add passenger luggage. Error: {OverLimitException}");
         }
 
-        System.out.println(person3.getNumBags()); //Displays 0 since no Luggage was added
+        System.out.println(person3.getNumBags()); //Displays 0 since no PassengerLuggage was added
 
         try {
-            for (Luggage bag : bags) { //Try to add more than maximum allowed Luggage to Passenger and throws OverLimitException
+            for (PassengerLuggage bag : bags) { //Try to add more than maximum allowed PassengerLuggage to Passenger and throws OverLimitException
                 person3.addBags(bag);
             }
         } catch (OversizeBagException obe) {
@@ -65,7 +65,7 @@ public class Executor {
             logger.error("Failed to add passenger luggage. Error: {OverLimitException}");
         }
 
-        System.out.println(person3.getNumBags()); //Displays 10 because Passenger has maximum number of Luggage
+        System.out.println(person3.getNumBags()); //Displays 10 because Passenger has maximum number of PassengerLuggage
         try {
             System.out.println(person3.getLuggage().toString());
         } catch (EmptyBagException nbe) {

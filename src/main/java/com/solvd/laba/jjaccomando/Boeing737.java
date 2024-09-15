@@ -137,7 +137,7 @@ public final class Boeing737 extends AirplaneBase {
             return true;
         if (obj instanceof Boeing737) {
             Boeing737 cast = (Boeing737)obj;
-            return this.hashCode() == cast.hashCode();
+            return this.getId() == cast.getId();
         }
         return false;
     }

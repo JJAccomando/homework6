@@ -4,13 +4,13 @@ import com.solvd.laba.jjaccomando.exceptions.*;
 import com.solvd.laba.jjaccomando.interfaces.Passengers;
 import com.solvd.laba.jjaccomando.interfaces.UniqueIdInterface;
 
-public class Passenger implements UniqueIdInterface, Passengers {
+public final class Passenger implements UniqueIdInterface, Passengers {
 
     private final int ID;
     private static int numPassengers = 0;
     private String firstName, lastName;
     private int countBags = 0;
-    private CustomLinkedList<Luggage> myList = new CustomLinkedList<>();
+    private CustomLinkedList<PassengerLuggage> myList = new CustomLinkedList<>();
     private Seat seat;
 
     //Passenger Object constructor 
@@ -21,7 +21,7 @@ public class Passenger implements UniqueIdInterface, Passengers {
     }
 
     //returns current number of Passenger Objects instantiated
-    public static final int getNumPassengers() {
+    public static int getNumPassengers() {
         return numPassengers;
     }
 
@@ -41,10 +41,10 @@ public class Passenger implements UniqueIdInterface, Passengers {
         return lastName;
     }
 
-    //adds Luggage Object to Passenger Object's array of Luggage and returns true
-    //does not add Luggage Object if Luggage weight is over 50lbs or Passenger Luggage array is full
+    //adds PassengerLuggage Object to Passenger Object's array of PassengerLuggage and returns true
+    //does not add PassengerLuggage Object if PassengerLuggage weight is over 50lbs or Passenger PassengerLuggage array is full
     @Override
-    public final boolean addBags(Luggage bag) throws OversizeBagException, OverLimitException {
+    public final boolean addBags(PassengerLuggage bag) throws OversizeBagException, OverLimitException {
         if (countBags >= MAX_LUGGAGE) 
             throw new OverLimitException("Passenger has maximum number of luggage!");
         if (bag.isOverweight())
@@ -54,7 +54,7 @@ public class Passenger implements UniqueIdInterface, Passengers {
         return true;
     }
 
-    //returns total number of Luggage Object's Passenger has
+    //returns total number of PassengerLuggage Object's Passenger has
     @Override
     public final int getNumBags() {
         return countBags;
@@ -77,9 +77,9 @@ public class Passenger implements UniqueIdInterface, Passengers {
         return seat;
     }
 
-    //returns array containing Passenger Object's Luggage Objects if Passenger has at least 1 Luggage
+    //returns array containing Passenger Object's PassengerLuggage Objects if Passenger has at least 1 PassengerLuggage
     @Override
-    public final CustomLinkedList<Luggage> getLuggage() throws EmptyBagException {
+    public final CustomLinkedList<PassengerLuggage> getLuggage() throws EmptyBagException {
         if (countBags == 0)
             throw new EmptyBagException("Passenger does not have any luggage!");
         return myList;
@@ -102,18 +102,17 @@ public class Passenger implements UniqueIdInterface, Passengers {
     //returns a String of a Passenger Object as that Object's "firstName", "lastName",  and ID#
     @Override
     public final String toString() {
-        String myString = String.format("Passenger %1$s %2$s\nPassenger#: %3$d", firstName, lastName, ID);
-        return myString;
+        return String.format("Passenger %1$s %2$s\nPassenger#: %3$d", firstName, lastName, ID);
     }
 
-    //compares 2 Passenger Objects by comparing their Object's hashcodes
+    //compares 2 Passenger Objects by comparing their Object's hashcode
     @Override
     public final boolean equals(Object obj) {
         if (obj == this)
             return true;
         if (obj instanceof Passenger) {
             Passenger cast = (Passenger)obj;
-            return this.hashCode() == cast.hashCode();
+            return this.getId() == cast.getId();
         }
         return false;
     }

@@ -86,14 +86,14 @@ public final class Seat implements UniqueIdInterface, Seats {
         return "Seat#: " + tempString.toString();
     }
 
-    //compares 2 Seat Objects by comparing their Object's hashcodes
+    //compares 2 Seat Objects by comparing their Object's hashcode
     @Override
     public final boolean equals(Object obj) {
         if (obj == this)
             return true;
         if (obj instanceof Seat) {
             Seat cast = (Seat)obj;
-            return this.hashCode() == cast.hashCode();
+            return this.getId() == cast.getId();
         }
         return false;
     }

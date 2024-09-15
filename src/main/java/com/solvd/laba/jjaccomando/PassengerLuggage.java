@@ -1,43 +1,44 @@
 package com.solvd.laba.jjaccomando;
 
+import com.solvd.laba.jjaccomando.interfaces.Luggage;
 import com.solvd.laba.jjaccomando.interfaces.UniqueIdInterface;
 
-public final class Luggage implements UniqueIdInterface, com.solvd.laba.jjaccomando.interfaces.Luggage {
+public final class PassengerLuggage implements UniqueIdInterface, Luggage {
 
     private final int ID;
     private int weight;
     private static int numLuggage = 0;
     private boolean isOverweight = false;
 
-    //Luggage Object constructor
-    public Luggage(int weight) {
+    //PassengerLuggage Object constructor
+    public PassengerLuggage(int weight) {
         this.ID = ++numLuggage;
         this.weight = weight;
         this.isOverweight = weight > 50;
     }
 
-    //returns total number of Luggage Object's instantiated
-    public static final int getNumLuggage() {
+    //returns total number of PassengerLuggage Object's instantiated
+    public static int getNumLuggage() {
         return numLuggage;
     }
 
 
 
-    ////////////// Luggage Overrides ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////// PassengerLuggage Overrides ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    //resets Luggage Object's weight to new weight value
+    //resets PassengerLuggage Object's weight to new weight value
     @Override
     public final void setWeight(int weight) {
         this.weight = weight;
     }
 
-    //returns Luggage Object's weight
+    //returns PassengerLuggage Object's weight
     @Override
     public final int getWeight() {
         return weight;
     }
 
-    //returns true if Luggage Object's weight is over 50lbs
+    //returns true if PassengerLuggage Object's weight is over 50lbs
     @Override
     public final boolean isOverweight() {
         return isOverweight;
@@ -47,7 +48,7 @@ public final class Luggage implements UniqueIdInterface, com.solvd.laba.jjaccoma
 
     ////////////// UniqueIdInterface Overrides ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    //returns Luggage Object's ID#
+    //returns PassengerLuggage Object's ID#
     @Override
     public final int getId() {
         return ID;
@@ -57,26 +58,25 @@ public final class Luggage implements UniqueIdInterface, com.solvd.laba.jjaccoma
 
     ////////////// Object Class Overrides ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    //returns a String of a Luggage Object as the Object's ID# and "weight"
+    //returns a String of a PassengerLuggage Object as the Object's ID# and "weight"
     @Override
     public final String toString() {
-        String myString = String.format("Luggage ID#: %1$d\nLuggage weight: %2$d", ID, weight);
-        return myString;
+        return String.format("PassengerLuggage ID#: %1$d\nPassengerLuggage weight: %2$d", ID, weight);
     }
 
-    //compares 2 Luggage Objects by comparing their Object's hashcodes
+    //compares 2 PassengerLuggage Objects by comparing their Object's hashcode
     @Override
     public final boolean equals(Object obj) {
         if (obj == this)
             return true;
-        if (obj instanceof Luggage) {
-            Luggage cast = (Luggage)obj;
-            return this.hashCode() == cast.hashCode();
+        if (obj instanceof PassengerLuggage) {
+            PassengerLuggage cast = (PassengerLuggage)obj;
+            return this.getId() == cast.getId();
         }
         return false;
     }
 
-    //Luggage Object's hashcode is set to its unique ID#
+    //PassengerLuggage Object's hashcode is set to its unique ID#
     @Override
     public final int hashCode() {
         return this.getId();
