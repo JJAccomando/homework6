@@ -13,12 +13,12 @@ public final class Boeing737 extends AirplaneBase {
     //Boeing737 Object constructor
     public Boeing737() {
         ++numB737;
-        this.ID = super.getTotalPlanes();
+        this.ID = getTotalPlanes();
         this.firstClassSeats = new Seat[PLANE_TYPE.SEATS_IN_FIRST];
         this.businessClassSeats = new Seat[PLANE_TYPE.SEATS_IN_BUSINESS];
         this.economyClassSeats = new Seat[PLANE_TYPE.SEATS_IN_ECON];
         this.populateSeats();
-        super.addToMap(this);
+        addToMap(this);
     }
 
     //private method used in constructor that assigns Seat arrays with Seat Objects
@@ -27,58 +27,36 @@ public final class Boeing737 extends AirplaneBase {
     //Seat number is based on rows and Seat letter is based on columns
     //number of rows and columns is based on PlaneType
     private final void populateSeats() {
-        int first = PLANE_TYPE.SEATS_IN_FIRST;
-        int totalRowFirst = (first / PLANE_TYPE.NUM_COLUMNS_FIRST);
-        int bus = PLANE_TYPE.SEATS_IN_BUSINESS;
-        int totalRowBus = (bus / PLANE_TYPE.NUM_COLUMNS_BUSINESS);
-        int econ = PLANE_TYPE.SEATS_IN_ECON;
-        int totalRowEcon = (econ / PLANE_TYPE.NUM_COLUMNS_ECON);
+        int totalRowFirst = (PLANE_TYPE.SEATS_IN_FIRST / PLANE_TYPE.NUM_COLUMNS_FIRST);
+        int totalRowBus = (PLANE_TYPE.SEATS_IN_BUSINESS / PLANE_TYPE.NUM_COLUMNS_BUSINESS);
+        int totalRowEcon = (PLANE_TYPE.SEATS_IN_ECON / PLANE_TYPE.NUM_COLUMNS_ECON);
 
-        for (int row = 1; row <= totalRowFirst; row++) {
+        populateSeatsHelper(firstClassSeats, totalRowFirst,
+                PLANE_TYPE.NUM_COLUMNS_FIRST, 1);
+        populateSeatsHelper(businessClassSeats, totalRowBus,
+                PLANE_TYPE.NUM_COLUMNS_BUSINESS, totalRowFirst + 1);
+        populateSeatsHelper(economyClassSeats, totalRowEcon,
+                PLANE_TYPE.NUM_COLUMNS_ECON, totalRowFirst + totalRowBus + 1);
+    }
+
+    private final void populateSeatsHelper (Seat[] seatArray, int numRows, int numColumns, int startRow) {
+        for (int row = startRow; row <= numRows; row++) {
             char seatLetter = 'A';
-            for (int i = 0; i < PLANE_TYPE.NUM_COLUMNS_FIRST; i++) {
+            for (int i = 0; i < numColumns; i++) {
                 Seat seat = new Seat(row, seatLetter);
-                for (int j = 0; j < firstClassSeats.length; j++) {
-                    if (firstClassSeats[j] == null) {
-                        firstClassSeats[j] = seat;
+                for (int j = 0; j < seatArray.length; j++) {
+                    if (seatArray[j] == null) {
+                        seatArray[j] = seat;
                         break;
                     }
                 }
-                ++seatLetter; 
-            }
-        }
-
-        for (int row = totalRowFirst + 1; row <= totalRowFirst + totalRowBus; row++) {
-            char seatLetter = 'A';
-            for (int i = 0; i < PLANE_TYPE.NUM_COLUMNS_BUSINESS; i++) {
-                Seat seat = new Seat(row, seatLetter);
-                for (int j = 0; j < businessClassSeats.length; j++) {
-                    if (businessClassSeats[j] == null) {
-                        businessClassSeats[j] = seat;
-                        break;
-                    }
-                }
-                ++seatLetter; 
-            }
-        }
-
-        for (int row = totalRowFirst + totalRowBus + 1; row <= totalRowFirst + totalRowBus + totalRowEcon; row++) {
-            char seatLetter = 'A';
-            for (int i = 0; i < PLANE_TYPE.NUM_COLUMNS_ECON; i++) {
-                Seat seat = new Seat(row, seatLetter);
-                for (int j = 0; j < economyClassSeats.length; j++) {
-                    if (economyClassSeats[j] == null) {
-                        economyClassSeats[j] = seat;
-                        break;
-                    }
-                }
-                ++seatLetter; 
+                ++seatLetter;
             }
         }
     }
     
     //returns current number of Boeing737 Objects instantiated
-    public static final int getCount() {
+    public static int getCount() {
         return numB737;
     }
 
@@ -149,11 +127,10 @@ public final class Boeing737 extends AirplaneBase {
     //returns a String of an Boeing737 Object as the Object's "COMPANY", "CLASSIFICATION", and ID#
     @Override
     public final String toString() {
-        String myString = String.format("%1$s %2$s\nPlane ID#: %3$d", PLANE_TYPE.COMPANY, PLANE_TYPE.CLASSIFICATION, ID);
-        return myString;
+        return String.format("%1$s %2$s\nPlane ID#: %3$d", PLANE_TYPE.COMPANY, PLANE_TYPE.CLASSIFICATION, ID);
     }
 
-    //compares 2 Boeing737 Objects by comparing their Object's hashcodes
+    //compares 2 Boeing737 Objects by comparing their Object's hashcode
     @Override
     public final boolean equals(Object obj) {
         if (obj == this)
